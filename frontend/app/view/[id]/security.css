@@ -1,0 +1,106 @@
+* {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  -webkit-user-drag: none !important;
+  -khtml-user-drag: none !important;
+  -moz-user-drag: none !important;
+  -o-user-drag: none !important;
+  user-drag: none !important;
+  -webkit-touch-callout: none !important;
+}
+
+img {
+  -webkit-user-drag: none !important;
+  -khtml-user-drag: none !important;
+  -moz-user-drag: none !important;
+  -o-user-drag: none !important;
+  user-drag: none !important;
+  pointer-events: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+::selection {
+  background: transparent !important;
+}
+
+::-moz-selection {
+  background: transparent !important;
+}
+
+*::-webkit-selection {
+  background: transparent !important;
+}
+
+*::-moz-selection {
+  background: transparent !important;
+}
+
+*:focus {
+  outline: none !important;
+}
+
+@media print {
+  * {
+    display: none !important;
+  }
+
+  body::before {
+    content: "Printing is not allowed for security reasons." !important;
+    display: block !important;
+    font-size: 24px !important;
+    text-align: center !important;
+    margin-top: 50vh !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0px !important;
+  background: transparent !important;
+}
+
+video::-webkit-media-controls-download-button {
+  display: none !important;
+}
+
+video::-webkit-media-controls-fullscreen-button {
+  display: none !important;
+}
+
+.secure-content {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-drag: none !important;
+  -khtml-user-drag: none !important;
+  -moz-user-drag: none !important;
+  -o-user-drag: none !important;
+  user-drag: none !important;
+  overflow: auto;
+  border: 2px solid red !important;
+}
+
+.debug-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background: rgba(255,0,0,0.1);
+}
+
+.blur-on-inactive {
+  transition: filter 0.3s ease !important;
+}
+
+.blur-on-inactive.blurred {
+  filter: blur(20px) !important;
+}
