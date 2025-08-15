@@ -4,13 +4,14 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import { Toaster } from "sonner"
 import { cn } from "@/lib/utils"
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "SecretShare - Secure One-Time Secret Sharing",
+  title: "Secret Share - Secure One-Time Secret Sharing",
   description: "Share secrets securely with end-to-end encryption and one-time viewing",
-  robots: "noindex, nofollow, noarchive, nosnippet, noimageindex",
+  robots: "index",
   referrer: "no-referrer",
   other: {
     "X-Content-Type-Options": "nosniff",
@@ -29,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en"  className={cn(inter.className)} suppressHydrationWarning>
       <head>
-        <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+        <meta name="robots" content="index" />
         <meta name="referrer" content="no-referrer" />
         <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
         <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
@@ -61,6 +62,7 @@ export default function RootLayout({
       <body>
         {children}
         <Toaster position="bottom-right" richColors closeButton />
+        <Analytics />
       </body>
     </html>
   )

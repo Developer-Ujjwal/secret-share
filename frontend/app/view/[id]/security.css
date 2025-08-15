@@ -82,7 +82,6 @@ video::-webkit-media-controls-fullscreen-button {
   -moz-user-drag: none !important;
   -o-user-drag: none !important;
   user-drag: none !important;
-  overflow: auto;
   border: 2px solid red !important;
 }
 

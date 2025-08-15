@@ -233,11 +233,11 @@ export default function HomePage() {
               alt="SecretShare Logo"
             />
         </div>
-        <div className="relative max-w-7xl mx-auto px-4 py-8">
+        <div className="relative max-w-7xl mx-auto px-4 pt-8">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center p-2 bg-blue-100 rounded-full mb-6">
+            {/* <div className="inline-flex items-center justify-center p-2 bg-blue-100 rounded-full mb-6">
               <Shield className="w-12 h-12 text-blue-600" />
-            </div>
+            </div> */}
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
               Share Secrets
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
@@ -269,108 +269,8 @@ export default function HomePage() {
               </Badge>
             </div>
           </div>
-
-          <div className="max-w-4xl mx-auto mb-16">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-gray-900">Key Features</h2>
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => setIsPlaying(!isPlaying)}
-                className="flex items-center gap-2"
-              >
-                {isPlaying ? (
-                  <Pause className="w-4 h-4" />
-                ) : (
-                  <Play className="w-4 h-4" />
-                )}
-                {isPlaying ? "Pause" : "Play"}
-              </Button>
-            </div>
-
-            <div className="grid lg:grid-cols-3 gap-8 items-start">
-              <div className="lg:col-span-1 space-y-4">
-                {features.map((feature, index) => (
-                  <div
-                    key={index}
-                    className={`p-4 rounded-lg border-2 transition-all duration-300 cursor-pointer ${
-                      currentFeature === index
-                        ? "border-blue-500 bg-blue-50 shadow-lg"
-                        : "border-gray-200 bg-white hover:border-gray-300"
-                    }`}
-                    onClick={() => {
-                      setCurrentFeature(index);
-                      setIsPlaying(false);
-                    }}
-                  >
-                    <div className="flex items-start gap-3">
-                      {feature.icon}
-                      <div>
-                        <h3 className="font-semibold text-gray-900 mb-1">
-                          {feature.title}
-                        </h3>
-                        <p className="text-sm text-gray-600">
-                          {feature.description}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="lg:col-span-2 bg-white rounded-xl p-8 shadow-lg border min-h-full flex flex-col justify-center">
-                <div className="text-center">
-                  <div className="mb-6 inline-block">
-                    {features[currentFeature].icon}
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                    {features[currentFeature].title}
-                  </h3>
-                  <p className="text-gray-600 mb-6 text-lg">
-                    {features[currentFeature].detail}
-                  </p>
-                  <div className="w-full bg-gray-200 rounded-full h-1.5 overflow-hidden">
-                    <div
-                      className="bg-blue-600 h-1.5 rounded-full transition-all duration-300"
-                      style={{
-                        width: isPlaying ? "100%" : "0%",
-                        transitionDuration: isPlaying ? "4s" : "0.3s",
-                      }}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="max-w-4xl mx-auto mb-16">
-            <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
-              Universal File Support
-            </h2>
-            <div className="grid md:grid-cols-4 gap-6">
-              {supportedTypes.map((type, index) => (
-                <Card
-                  key={index}
-                  className="text-center hover:shadow-lg transition-shadow"
-                >
-                  <CardContent className="p-6">
-                    <div className="flex justify-center mb-4 text-blue-600">
-                      {type.icon}
-                    </div>
-                    <h3 className="font-semibold text-gray-900 mb-2">
-                      {type.name}
-                    </h3>
-                    <p className="text-sm text-gray-600">{type.types}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="max-w-2xl mx-auto px-4 pb-16">
-        {!shareLink ? (
+            <div className="max-w-2xl mx-auto px-4 pb-16">
+          {!shareLink ? (
           <Card className="shadow-xl border-0">
             <CardHeader className="text-center">
               <CardTitle className="text-2xl">Create a Secret</CardTitle>
@@ -535,6 +435,108 @@ export default function HomePage() {
             </CardContent>
           </Card>
         )}
+        </div>
+
+          <div className="max-w-4xl mx-auto mb-16">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-2xl font-bold text-gray-900">Key Features</h2>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setIsPlaying(!isPlaying)}
+                className="flex items-center gap-2"
+              >
+                {isPlaying ? (
+                  <Pause className="w-4 h-4" />
+                ) : (
+                  <Play className="w-4 h-4" />
+                )}
+                {isPlaying ? "Pause" : "Play"}
+              </Button>
+            </div>
+
+            <div className="grid lg:grid-cols-3 gap-8 items-start">
+              <div className="lg:col-span-1 space-y-4">
+                {features.map((feature, index) => (
+                  <div
+                    key={index}
+                    className={`p-4 rounded-lg border-2 transition-all duration-300 cursor-pointer ${
+                      currentFeature === index
+                        ? "border-blue-500 bg-blue-50 shadow-lg"
+                        : "border-gray-200 bg-white hover:border-gray-300"
+                    }`}
+                    onClick={() => {
+                      setCurrentFeature(index);
+                      setIsPlaying(false);
+                    }}
+                  >
+                    <div className="flex items-start gap-3">
+                      {feature.icon}
+                      <div>
+                        <h3 className="font-semibold text-gray-900 mb-1">
+                          {feature.title}
+                        </h3>
+                        <p className="text-sm text-gray-600">
+                          {feature.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="lg:col-span-2 bg-white rounded-xl p-8 shadow-lg border min-h-full flex flex-col justify-center">
+                <div className="text-center">
+                  <div className="mb-6 inline-block">
+                    {features[currentFeature].icon}
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    {features[currentFeature].title}
+                  </h3>
+                  <p className="text-gray-600 mb-6 text-lg">
+                    {features[currentFeature].detail}
+                  </p>
+                  <div className="w-full bg-gray-200 rounded-full h-1.5 overflow-hidden">
+                    <div
+                      className="bg-blue-600 h-1.5 rounded-full transition-all duration-300"
+                      style={{
+                        width: isPlaying ? "100%" : "0%",
+                        transitionDuration: isPlaying ? "4s" : "0.3s",
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="max-w-4xl mx-auto mb-16">
+            <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
+              Universal File Support
+            </h2>
+            <div className="grid md:grid-cols-4 gap-6">
+              {supportedTypes.map((type, index) => (
+                <Card
+                  key={index}
+                  className="text-center hover:shadow-lg transition-shadow"
+                >
+                  <CardContent className="p-6">
+                    <div className="flex justify-center mb-4 text-blue-600">
+                      {type.icon}
+                    </div>
+                    <h3 className="font-semibold text-gray-900 mb-2">
+                      {type.name}
+                    </h3>
+                    <p className="text-sm text-gray-600">{type.types}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-2xl mx-auto px-4 pb-16">
 
         <div className="mt-12 text-center">
           <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">

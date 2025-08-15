@@ -384,11 +384,11 @@ export default function ViewSecretPage() {
     if (decryptedFile) {
       if (canDisplayInIframe(decryptedFile.type)) {
         return (
-          <div className="relative w-full h-96 bg-gray-100 rounded-lg overflow-hidden">
+          <div className="relative w-full min-h-96 bg-gray-100 rounded-lg overflow-auto">
             <object
               data={`${decryptedFile.url}#toolbar=0`}
               type={decryptedFile.type}
-              className="secure-content w-full h-full"
+              className="secure-content w-full min-h-96 object-contain"
               aria-label={`Secure view of ${decryptedFile.filename}`}
               onContextMenu={(e) => e.preventDefault()}
             >
